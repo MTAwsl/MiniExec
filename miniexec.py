@@ -5,6 +5,8 @@ import lief
 import os
 from base64 import b64encode
 
+dir = os.path.abspath(os.path.dirname(__file__))
+
 def align(sz: int, al: int):
     # Align sz with al
     return sz + al - sz % al if sz >= 0 else 0;
@@ -14,7 +16,7 @@ def pad_data(data: bytes, al: int):
     return data + (b'\x00' * (align(len(data), al) - len(data)))
 
 def insert_section(template, section_name, data):
-    pe = lief.PE.parse(template) # Template file
+    pe = lief.PE.parse(os.path.join(dir, template)) # Template file
 
     file_alignment = pe.optional_header.file_alignment
 

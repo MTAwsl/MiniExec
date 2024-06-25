@@ -15,7 +15,7 @@ After that, I realized that msfvenom has `windows/exec` available. Now I am cryi
 ## Usage
 First, compile template-exe, template-dll, and template-service.
 Or use the pre-compiled version in this repository.
-Put these template files in your current working directory.
+Put these template files in the same directory of the script.
 
 If you are generating 32-bit executables, you need to modify some name of struct members (such as `CONTEXT.Rip`), and compile a 32-bit version on your own.
 
