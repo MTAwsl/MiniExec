@@ -17,6 +17,8 @@ First, compile template-exe, template-dll, and template-service.
 Or use the pre-compiled version in this repository.
 Put these template files in your current working directory.
 
+If you are generating 32-bit executables, you need to modify some name of struct members (such as `CONTEXT.Rip`), and compile a 32-bit version on your own.
+
 Use `miniexec.py` to generate your executables.
 
 ```
